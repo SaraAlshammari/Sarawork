@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+
+import 'reset_password.dart';
 TapGestureRecognizer tapGestureRecognizer = TapGestureRecognizer();
 
 class Login extends StatelessWidget {
@@ -213,15 +215,24 @@ class Login extends StatelessWidget {
         child: SizedBox(
           width: 320,
           height: 25,
-          child: Text(
-            'Forgot Password?',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Color(0xFF029280),
-              fontSize: 17,
-              fontFamily: 'Inter',
-              fontWeight: FontWeight.w500,
-            ),
+          child:
+          TextButton(
+            child:Text("Forget Password",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFF029280),
+                  fontSize: 20,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w500,
+                )
+            )  ,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ResetPasswordScreen()),
+              );
+            },
+
           ),
         ),
       ),
